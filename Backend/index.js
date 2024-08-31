@@ -8,13 +8,12 @@ import stringSimilarity from "string-similarity";
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
- cors({
+app.use(cors({
    origin: ["https://mern-stack-frontend-fawn.vercel.app"], // Replace with your frontend domain
    methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
+  allowedHeaders: ['Content-Type', 'Authorization'],
      credentials: true,
-})
-();
+}));
 app.use(express.json());
 connectDB();
 
