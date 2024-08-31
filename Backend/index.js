@@ -32,6 +32,7 @@ console.log(qaStore);
 updateQAStore();
 setInterval(updateQAStore, 300000);
 
+
 function preprocessQuestion(question) {
   return question.toLowerCase().trim();
 }
@@ -45,6 +46,10 @@ function findClosestMatch(processedQuestion) {
   const matches = stringSimilarity.findBestMatch(processedQuestion, questions);
   return matches.bestMatch;
 }
+
+app.get("/",asyns(req,res)=>{
+await res.json({msg:"the backend is working"})
+})
 
 app.post("/ask", async (req, res) => {
   const question = req.body.question;
