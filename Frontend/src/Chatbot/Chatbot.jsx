@@ -24,7 +24,7 @@ const Chatbot = () => {
     ]);
 
     try {
-      const response = await fetch("https://mern-stack-yn9y.vercel.app/ask", {
+      const response = await fetch("https://mern-stack-yn9y.vercel.app", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
