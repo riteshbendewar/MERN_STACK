@@ -9,13 +9,12 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors());
-// cors({
-//   origin: "https://your-frontend-domain.com", // Replace with your frontend domain
-//   methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
-//   // allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
-//   credentials: true,
-// })
-// ();
+ cors({
+   origin: ["https://mern-stack-frontend-fawn.vercel.app"], // Replace with your frontend domain
+   methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
+     credentials: true,
+})
+();
 app.use(express.json());
 connectDB();
 
